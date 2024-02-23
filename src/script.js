@@ -71,12 +71,12 @@ const renderBoxes = () => {
 
     const boxСover = document.createElement('img')
     boxСover.classList.add('frame-boxes__box-cover')
-    boxСover.setAttribute('src', '/src/assets/svg/box_cover.svg')
+    boxСover.setAttribute('src', 'src/assets/svg/box_cover.svg')
     box.appendChild(boxСover)
 
     const boxBottom = document.createElement('img')
     boxBottom.classList.add('frame-boxes__box-bottom')
-    boxBottom.setAttribute('src', '/src/assets/svg/box_bottom.svg')
+    boxBottom.setAttribute('src', 'src/assets/svg/box_bottom.svg')
     box.appendChild(boxBottom)
 
     box.addEventListener('click', () => {
