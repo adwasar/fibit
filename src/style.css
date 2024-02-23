@@ -438,6 +438,44 @@ button {
   margin-top: 35px;
 }
 
+.frame-boxes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: center; 
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.frame-boxes__box {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 169px;
+  cursor: pointer;
+  @media (max-width: 768px) {
+    width: 88px;
+  }
+}
+
+.frame-boxes__box-cover {
+  position: relative;
+  top: 84px;
+  z-index: 1;
+  @media (max-width: 768px) {
+    top: 42px;
+  }
+}
+
+.frame-boxes__box_open > .frame-boxes__box-cover {
+  transform: translateY(-42px);
+  @media (max-width: 768px) {
+    transform: translateY(-21px);
+  }
+}
+
 @keyframes fadeIn {
   0% {
     margin-top: -20px;
