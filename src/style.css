@@ -12,6 +12,11 @@ body {
   overflow-x: hidden;
 }
 
+h1, h2 {
+  margin: 0;
+}
+
+
 ul {
   margin: 0;
   padding: 0;
@@ -61,11 +66,6 @@ button {
   @media (max-width: 768px ) {
     padding: 0 15px;
   }
-}
-
-.d-none {
-  display: none;
-  z-index: -1;
 }
 
 .navbar {
@@ -293,4 +293,136 @@ button {
 
 .frame-main__btn-no:hover::before {
   border-color: transparent transparent var(--white-color) transparent;
+}
+
+.frame-loading { 
+  text-align: center;
+}
+
+.frame-loading__title { 
+  margin-top: 110px;
+  text-align: center;
+  @media (max-width: 768px) {
+    margin-top: 84px;
+    font-size: 24px;
+  }
+}
+
+
+.frame-loading__text-1 {
+  opacity: 0;
+}
+
+.frame-loading__text-1.active {
+  opacity: 1;
+  margin-top: 50px;
+  animation: fadeIn 1.5s ease; 
+  @media (max-width: 768px) {
+    margin-top: 21px;
+  }
+}
+
+.frame-loading__text-2 {
+  opacity: 0;
+}
+
+.frame-loading__text-2.active {
+  opacity: 1;
+  margin-top: 25px;
+  animation: fadeIn 1.5s ease; 
+  @media (max-width: 768px) {
+    margin-top: 10px;
+  }
+}
+
+.frame-loading__text-3 {
+  opacity: 0;
+}
+
+.frame-loading__text-3.active {
+  opacity: 1;
+  margin-top: 25px;
+  animation: fadeIn 1.5s ease; 
+  @media (max-width: 768px) {
+    margin-top: 10px;
+  }
+}
+
+.frame-loading__img {
+  display: block;
+  margin: 0 auto;
+  margin-top: 109px;
+  opacity: 0;
+}
+
+.frame-loading__img.active {
+  opacity: 1;
+  margin-top: 109px;
+  animation: fadeIn 1.5s ease, rotateAnimation 2s ease 1s infinite; 
+  @media (max-width: 768px) {
+    margin-top: 60px;
+  }
+}
+
+.frame-loading__status {
+  display: block;
+  opacity: 0;
+  margin-top: 105px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.frame-loading__status.active {
+  display: block;
+  opacity: 1;
+  margin-top: 105px;
+  font-size: 20px;
+  font-weight: 700;
+  @media (max-width: 768px) {
+    margin-top: 40px;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    margin-top: -20px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: steps(1);
+    animation-duration: 0s; 
+  }
+  25% {
+    transform: rotate(-90deg);
+    animation-timing-function: steps(1);
+    animation-duration: 0s;
+  }
+  50% {
+    transform: rotate(-180deg);
+    animation-timing-function: steps(1);
+    animation-duration: 0s;
+  }
+  75% {
+    transform: rotate(-270deg);
+    animation-timing-function: steps(1);
+    animation-duration: 0s;
+  }
+  100% {
+    transform: rotate(-360deg);
+    animation-timing-function: steps(1);
+    animation-duration: 0s;
+  }
+}
+
+
+
+.d-hide {
+  display: none;
 }
