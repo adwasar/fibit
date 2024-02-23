@@ -16,7 +16,6 @@ h1, h2 {
   margin: 0;
 }
 
-
 ul {
   margin: 0;
   padding: 0;
@@ -26,6 +25,16 @@ ul {
 button {
   padding: 0;
   border: none;
+}
+
+.btn-ok {
+  width: 100px;
+  height: 46px;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: var(--aqua-color);
+  border-radius: 23px;
+  cursor: pointer;
 }
 
 .wrapper {
@@ -66,6 +75,10 @@ button {
   @media (max-width: 768px ) {
     padding: 0 15px;
   }
+}
+
+.d-hide {
+  display: none !important;
 }
 
 .navbar {
@@ -302,15 +315,21 @@ button {
 .frame-loading__title { 
   margin-top: 110px;
   text-align: center;
+  font-size: 48px;
   @media (max-width: 768px) {
     margin-top: 84px;
-    font-size: 24px;
+    font-size: 16px;
   }
 }
 
 
-.frame-loading__text-1 {
+.frame-loading__text-1,
+.frame-loading__text-2,
+.frame-loading__text-3  {
   opacity: 0;
+  @media (max-width: 678px) {
+    font-size: 12px;
+  }
 }
 
 .frame-loading__text-1.active {
@@ -322,10 +341,6 @@ button {
   }
 }
 
-.frame-loading__text-2 {
-  opacity: 0;
-}
-
 .frame-loading__text-2.active {
   opacity: 1;
   margin-top: 25px;
@@ -333,10 +348,6 @@ button {
   @media (max-width: 768px) {
     margin-top: 10px;
   }
-}
-
-.frame-loading__text-3 {
-  opacity: 0;
 }
 
 .frame-loading__text-3.active {
@@ -383,6 +394,50 @@ button {
   }
 }
 
+.popup-choice {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  position: absolute;
+  width: calc(100% - 30px);
+  min-height: 100vh;
+  text-align: center;
+  background-color: #0000007a;
+}
+
+.popup-choice__gift-img {
+  width: 295;
+  height: auto;
+  @media(max-width: 768px) {
+    width: 122px;
+  }
+}
+
+.popup-choice__title {
+  margin: 65px 0 41px;
+  font-size: 20px;
+  font-weight: 700;
+  @media (max-width: 678px) {
+    margin-top: 35px;
+    font-size: 16px;
+  }
+}
+
+.popup-choice__text {
+  margin-top: 35px;
+  @media (max-width: 678px) {
+    margin-top: 20px;
+    font-size: 12px;
+  }
+}
+
+.popup-choice__btn {
+  margin-top: 35px;
+}
+
 @keyframes fadeIn {
   0% {
     margin-top: -20px;
@@ -421,8 +476,3 @@ button {
   }
 }
 
-
-
-.d-hide {
-  display: none;
-}

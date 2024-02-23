@@ -1,7 +1,9 @@
 const frameMain = document.querySelector('.frame-main')
 const frameLoading = document.querySelector('.frame-loading')
+const popupChoice = document.querySelector('.popup-choice')
 const btnYes = document.querySelector('.frame-main__btn-yes')
 const btnNo = document.querySelector('.frame-main__btn-no')
+const btnOk = document.querySelector('.popup-choice__btn')
 
 const setLoader = () => {
   setTimeout(function () {
@@ -23,13 +25,14 @@ const setLoader = () => {
 
   setTimeout(function () {
     hideFrames()
-    frameMain.classList.remove('d-hide')
+    popupChoice.classList.remove('d-hide')
   }, 8000)
 }
 
 const hideFrames = () => {
   frameMain.classList.add('d-hide')
   frameLoading.classList.add('d-hide')
+  popupChoice.classList.add('d-hide')
 }
 
 btnYes.addEventListener('click', () => {
@@ -42,4 +45,9 @@ btnNo.addEventListener('click', () => {
   hideFrames()
   frameLoading.classList.remove('d-hide')
   setLoader()
+})
+
+btnOk.addEventListener('click', () => {
+  hideFrames()
+  frameMain.classList.remove('d-hide')
 })
