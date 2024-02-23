@@ -3,10 +3,12 @@ const frameLoading = document.querySelector('.frame-loading')
 const frameBoxes = document.querySelector('.frame-boxes')
 const popupChoice = document.querySelector('.popup-choice')
 const popupFail = document.querySelector('.popup-fail')
+const popupGift = document.querySelector('.popup-gift ')
 const btnYes = document.querySelector('.frame-main__btn-yes')
 const btnNo = document.querySelector('.frame-main__btn-no')
 const choiceBtn = document.querySelector('.popup-choice__btn')
 const failBtn = document.querySelector('.popup-fail__btn')
+const giftBtn = document.querySelector('.popup-gift__btn')
 
 const boxes = [
   { isOpen: false, id: 1 },
@@ -52,8 +54,10 @@ const setLoader = () => {
 const hideFrames = () => {
   frameMain.classList.add('d-hide')
   frameLoading.classList.add('d-hide')
+  frameBoxes.classList.add('d-hide')
   popupChoice.classList.add('d-hide')
   popupFail.classList.add('d-hide')
+  popupGift.classList.add('d-hide')
 }
 
 const renderBoxes = () => {
@@ -85,6 +89,8 @@ const renderBoxes = () => {
 
       if (openBoxesCount === 1) {
         popupFail.classList.remove('d-hide')
+      } else {
+        popupGift.classList.remove('d-hide')
       }
     })
   })
@@ -112,5 +118,13 @@ choiceBtn.addEventListener('click', () => {
 failBtn.addEventListener('click', () => {
   hideFrames()
   frameBoxes.classList.remove('d-hide')
-  console.log(1)
+})
+
+giftBtn.addEventListener('click', () => {
+  hideFrames()
+  openBoxesCount = 0
+  frameMain.classList.remove('d-hide')
+  boxes.forEach((el) => {
+    el.isOpen = false
+  })
 })

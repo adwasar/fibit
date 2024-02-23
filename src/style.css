@@ -255,7 +255,7 @@ button {
 .frame-main__btn-yes::after {
   content: '';
   position: absolute;
-  right: 0;
+  right: 1px;
   top: 0;
   border-width: 0 0 60px 80px;
   border-style: solid;
@@ -290,7 +290,7 @@ button {
 .frame-main__btn-no::before {
   content: '';
   position: absolute;
-  left: 0;
+  left: 1px;
   bottom: 0;
   border-width: 0 0 60px 80px;
   border-style: solid;
@@ -394,7 +394,7 @@ button {
   }
 }
 
-.popup-choice, .popup-fail {
+.popup-choice, .popup-fail, .popup-gift {
   padding: 15px;
   display: flex;
   justify-content: center;
@@ -493,6 +493,38 @@ button {
   margin-top: 150px;
   @media (max-width: 765px) {
     margin-top: 60px;
+  }
+}
+
+.popup-gift__title {
+  margin-top: 56px;
+  @media(max-width: 768px) {
+    margin-top: 20px;
+  }
+}
+
+.popup-gift__sub-title {
+  margin: 32px 0 0;
+  @media(max-width: 768px) {
+    margin-top: 20px;
+  }
+}
+
+.popup-gift__text-wrapper {
+  margin-top: 32px;
+  @media(max-width: 768px) {
+    margin-top: 20px;
+  }
+}
+
+.popup-gift__text {
+  margin: 0;
+}
+
+.popup-gift__btn {
+  margin: 32px 0 0;
+  @media(max-width: 768px) {
+    margin-top: 20px;
   }
 }
 
