@@ -394,7 +394,7 @@ button {
   }
 }
 
-.popup-choice {
+.popup-choice, .popup-fail {
   padding: 15px;
   display: flex;
   justify-content: center;
@@ -406,6 +406,7 @@ button {
   min-height: 100vh;
   text-align: center;
   background-color: #0000007a;
+  z-index: 2;
 }
 
 .popup-choice__gift-img {
@@ -455,9 +456,14 @@ button {
   flex-direction: column;
   width: 169px;
   cursor: pointer;
+  transition: 0.4s;
   @media (max-width: 768px) {
     width: 88px;
   }
+}
+
+.frame-boxes__box:hover {
+  transform: scale(1.1);
 }
 
 .frame-boxes__box-cover {
@@ -473,6 +479,20 @@ button {
   transform: translateY(-42px);
   @media (max-width: 768px) {
     transform: translateY(-21px);
+  }
+}
+
+.popup-fail__text {
+  margin-top: 120px;
+  @media (max-width: 765px) {
+    margin-top: 60px;
+  }
+}
+
+.popup-fail__btn {
+  margin-top: 150px;
+  @media (max-width: 765px) {
+    margin-top: 60px;
   }
 }
 

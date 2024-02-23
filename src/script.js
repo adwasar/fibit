@@ -2,9 +2,11 @@ const frameMain = document.querySelector('.frame-main')
 const frameLoading = document.querySelector('.frame-loading')
 const frameBoxes = document.querySelector('.frame-boxes')
 const popupChoice = document.querySelector('.popup-choice')
+const popupFail = document.querySelector('.popup-fail')
 const btnYes = document.querySelector('.frame-main__btn-yes')
 const btnNo = document.querySelector('.frame-main__btn-no')
-const btnOk = document.querySelector('.popup-choice__btn')
+const choiceBtn = document.querySelector('.popup-choice__btn')
+const failBtn = document.querySelector('.popup-fail__btn')
 
 const boxes = [
   { isOpen: false, id: 1 },
@@ -20,6 +22,8 @@ const boxes = [
   { isOpen: false, id: 11 },
   { isOpen: false, id: 12 },
 ]
+
+let openBoxesCount = 0
 
 const setLoader = () => {
   setTimeout(function () {
@@ -49,6 +53,7 @@ const hideFrames = () => {
   frameMain.classList.add('d-hide')
   frameLoading.classList.add('d-hide')
   popupChoice.classList.add('d-hide')
+  popupFail.classList.add('d-hide')
 }
 
 const renderBoxes = () => {
@@ -71,11 +76,16 @@ const renderBoxes = () => {
     box.appendChild(boxBottom)
 
     box.addEventListener('click', () => {
+      openBoxesCount++
       el.isOpen = true
       while (frameBoxes.firstChild) {
         frameBoxes.removeChild(frameBoxes.firstChild)
       }
       renderBoxes()
+
+      if (openBoxesCount === 1) {
+        popupFail.classList.remove('d-hide')
+      }
     })
   })
 }
@@ -94,7 +104,13 @@ btnNo.addEventListener('click', () => {
   setLoader()
 })
 
-btnOk.addEventListener('click', () => {
+choiceBtn.addEventListener('click', () => {
   hideFrames()
-  frameMain.classList.remove('d-hide')
+  frameBoxes.classList.remove('d-hide')
+})
+
+failBtn.addEventListener('click', () => {
+  hideFrames()
+  frameBoxes.classList.remove('d-hide')
+  console.log(1)
 })
