@@ -60,7 +60,14 @@ const hideFrames = () => {
   popupGift.classList.add('d-hide')
 }
 
+const cleanBoxes = () => {
+  while (frameBoxes.firstChild) {
+    frameBoxes.removeChild(frameBoxes.firstChild)
+  }
+}
+
 const renderBoxes = () => {
+  cleanBoxes()
   boxes.forEach((el) => {
     const box = document.createElement('div')
     box.classList.add(`frame-boxes__box`)
@@ -82,9 +89,6 @@ const renderBoxes = () => {
     box.addEventListener('click', () => {
       openBoxesCount++
       el.isOpen = true
-      while (frameBoxes.firstChild) {
-        frameBoxes.removeChild(frameBoxes.firstChild)
-      }
       renderBoxes()
 
       if (openBoxesCount === 1) {
@@ -95,8 +99,6 @@ const renderBoxes = () => {
     })
   })
 }
-
-renderBoxes()
 
 btnYes.addEventListener('click', () => {
   hideFrames()
@@ -112,6 +114,7 @@ btnNo.addEventListener('click', () => {
 
 choiceBtn.addEventListener('click', () => {
   hideFrames()
+  renderBoxes()
   frameBoxes.classList.remove('d-hide')
 })
 
