@@ -321,41 +321,29 @@ button {
   }
 }
 
-
 .frame-loading__text-1,
 .frame-loading__text-2,
-.frame-loading__text-3  {
+.frame-loading__text-3 {
+  margin-top: 25px;
   opacity: 0;
-  @media (max-width: 678px) {
+  @media (max-width: 768px) {
     font-size: 12px;
+    margin-top: 10px;
   }
 }
 
-.frame-loading__text-1.active {
-  opacity: 1;
+.frame-loading__text-1 {
   margin-top: 50px;
-  animation: fadeIn 1.5s ease; 
-  @media (max-width: 768px) {
+  @media (max-width: 678px) {
     margin-top: 21px;
   }
 }
 
-.frame-loading__text-2.active {
-  opacity: 1;
-  margin-top: 25px;
-  animation: fadeIn 1.5s ease; 
-  @media (max-width: 768px) {
-    margin-top: 10px;
-  }
-}
-
+.frame-loading__text-1.active,
+.frame-loading__text-2.active,
 .frame-loading__text-3.active {
   opacity: 1;
-  margin-top: 25px;
-  animation: fadeIn 1.5s ease; 
-  @media (max-width: 768px) {
-    margin-top: 10px;
-  }
+  animation: appear 1.5s ease; 
 }
 
 .frame-loading__img {
@@ -529,9 +517,9 @@ button {
   }
 }
 
-@keyframes fadeIn {
+@keyframes appear {
   0% {
-    margin-top: -20px;
+    transform: translateY(-20px);
     opacity: 0;
   }
   100% {
